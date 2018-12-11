@@ -10,9 +10,7 @@ function part2() {
   const repeats = {};
   let answer;
   let n;
-  const reducer = (a, i, arr) => {
-    if (i === arr.length) arr.push(...arr);
-
+  const reducer = (a) => {
     if (!n) {
       n = a;
       return
