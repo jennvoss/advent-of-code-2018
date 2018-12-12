@@ -24,7 +24,7 @@ function part1(arr) {
 // console.log(part1(input));
 
 function part2(arr) {
-  let matchingItems;
+  let answer;
   const doLettersMatch = (a,b) => {
     let matches = 0;
     for (let i = 0; i < a.length; i++) {
@@ -32,7 +32,7 @@ function part2(arr) {
     }
 
     if (matches === a.length-1) {
-      matchingItems = [a,b];
+      answer = a.split('').filter(i => b.indexOf(i) >= 0).join('');
       return true;
     }
   }
@@ -41,7 +41,7 @@ function part2(arr) {
     let match = arr.some((el, idx) => {
       return idx === i ? false : doLettersMatch(el, arr[i]);
     });
-    if (match) {return matchingItems} else {arr.pop()};
+    if (match) {return answer} else {arr.pop()};
   }
 }
 // console.log(part2(input));

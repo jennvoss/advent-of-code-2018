@@ -1,0 +1,22 @@
+{
+  "name": "advent-of-code-2018",
+  "version": "1.0.0",
+  "description": "",
+  "main": "1.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jennvoss/advent-of-code-2018.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jennvoss/advent-of-code-2018/issues"
+  },
+  "homepage": "https://github.com/jennvoss/advent-of-code-2018#readme",
+  "dependencies": {
+    "jest": "^23.6.0"
+  }
+}
