@@ -32,7 +32,7 @@ const sleepiestMin = minutes => {
   return Object.keys(minutes).sort((a, b) => minutes[a] - minutes[b]).pop();
 };
 
-function part1(arr) {
+function sortLogs(arr) {
   const dates = sortByDate(arr);
   let guards = {};
   let guardNumber;
@@ -43,7 +43,7 @@ function part1(arr) {
     }
 
     if (dates[a] === 'falls asleep' && dates[b] === 'wakes up') {
-      if (!guards[guardNumber]) {guards[guardNumber] = {}};
+      if (!guards[guardNumber]) {guards[guardNumber] = {}}
       const start = new Date(a);
       const end = new Date(b);
 
@@ -57,11 +57,26 @@ function part1(arr) {
     return b;
   });
 
+  return guards;
+}
+
+function part1(arr) {
+  const guards = sortLogs(arr);
   const sleepiestGuard = getSleepiest(guards);
   return sleepiestGuard * sleepiestMin(guards[sleepiestGuard].minutes);
 }
 // console.log(part1(input));
 
+function part2(arr) {
+  const guards = sortLogs(arr);
+  const frequentSleeper = Object.keys(guards).sort((a, b) => {
+    return sleepiestMin(guards[a].minutes) - sleepiestMin(guards[b].minutes);
+  }).pop();
+  return frequentSleeper * sleepiestMin(guards[frequentSleeper].minutes);
+}
+// console.log(part2(input));
+
 module.exports = {
-  part1: part1
+  part1: part1,
+  part2: part2
 };

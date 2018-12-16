@@ -30,4 +30,14 @@ describe('day 4', () => {
     const result = day4.part1(input);
     expect(result).toEqual(131469);
   });
+
+  it('#part 2 - example', () => {
+    const result = day4.part2(testInput);
+    expect(result).toEqual(4455);
+  });
+
+  it('#part 2', () => {
+    const result = day4.part2(input);
+    expect(result).toEqual(96951);
+  });
 });
