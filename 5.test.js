@@ -13,4 +13,13 @@ describe('day 5', () => {
     expect(result).toEqual(11252);
   });
 
+  it('#part 2 - example', () => {
+    const result = day5.part2(testInput);
+    expect(result).toEqual(4);
+  });
+
+  it('#part 2', () => {
+    const result = day5.part2(input);
+    expect(result).toEqual(6118);
+  });
 });
