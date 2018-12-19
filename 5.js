@@ -27,10 +27,9 @@ function part2(str) {
   const removeL = (str, l) => str.split('').filter(x => x.toLowerCase() !== l);
   const lengthWithoutL = (str, l) => reactUnits(removeL(str, l)).length;
 
-  return Array.from(uniq).reduce((a,b) => {
-    if (typeof a !== 'number') {a = lengthWithoutL(reacted, a)}
-    return Math.min(a, lengthWithoutL(reacted, b));
-  });
+  return Array.from(uniq)
+    .map(i => lengthWithoutL(reacted, i))
+    .reduce((a, b) => Math.min(a, b));
 }
 // console.log(part2(input));
 

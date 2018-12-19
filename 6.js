@@ -45,8 +45,17 @@ const getGridValues = (arr, valueFn) => {
 function part1(arr) {
   const grid = getGridValues(arr, getClosestPoint);
   let totals = {};
+
+  // method 1 & 2 appear to take the same amount of time
+  // Method 1
   Object.keys(grid).forEach(point => totals[grid[point]] = ++totals[grid[point]] || 1);
   return Object.values(totals).sort((a, b) => a - b).pop();
+
+  // Method 2
+  // return Object.keys(grid).reduce((val, point) => {
+  //   totals[grid[point]] = ++totals[grid[point]] || 1;
+  //   return val > totals[grid[point]] ? val : totals[grid[point]];
+  // }, 0);
 }
 // console.log(part1(input));
 
